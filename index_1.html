@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Saurav Medhi, PhD researcher in climate finance at the Department of Management Studies, IIT Delhi. Physical and transition climate risk, carbon taxation, corporate resilience.">
+<meta property="og:title" content="Saurav Medhi">
+<meta property="og:description" content="PhD researcher in climate finance, DMS IIT Delhi.">
+<meta property="og:type" content="website">
+<title>Saurav Medhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Libre+Franklin:ital,wght@0,300..600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --paper:       #F8FAFB;
+    --surface:     #EDF1F4;
+    --ink:         #0E161C;
+    --ink-soft:    #4B5A64;
+    --ink-faint:   #7B8993;
+    --rule:        #DBE2E7;
+    --accent:      #16456E;
+    --accent-tint: #E4EDF4;
+    --accent-ink:  #103856;
+
+    --f-display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    --f-body:    "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --f-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --measure: 66ch;
+    --gutter: 156px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:       #0A1015;
+      --surface:     #131C23;
+      --ink:         #E6EDF1;
+      --ink-soft:    #9DABB4;
+      --ink-faint:   #74838D;
+      --rule:        #1F2B33;
+      --accent:      #7FB4E0;
+      --accent-tint: #0F1F2B;
+      --accent-ink:  #A6CDEC;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:       #0A1015;
+    --surface:     #131C23;
+    --ink:         #E6EDF1;
+    --ink-soft:    #9DABB4;
+    --ink-faint:   #74838D;
+    --rule:        #1F2B33;
+    --accent:      #7FB4E0;
+    --accent-tint: #0F1F2B;
+    --accent-ink:  #A6CDEC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16.5px;
+    font-weight: 350;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 3rem) 3.5rem;
+  }
+
+  a {
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+    transition: border-color .18s ease;
+  }
+  a:hover { border-bottom-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  /* ---------- masthead ---------- */
+
+  .masthead { padding-bottom: 2.6rem; }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: .70rem;
+    font-weight: 500;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+
+  h1 {
+    font-family: var(--f-display);
+    font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 100;
+    font-weight: 450;
+    font-size: clamp(2.7rem, 7.5vw, 4.2rem);
+    line-height: 1.04;
+    letter-spacing: -.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    font-family: var(--f-display);
+    font-size: clamp(1.1rem, 2.3vw, 1.34rem);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 44ch;
+    margin: 1rem 0 0;
+  }
+
+  .lede { max-width: var(--measure); margin: 1.7rem 0 0; color: var(--ink-soft); }
+  .lede + .lede { margin-top: .9rem; }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.5rem;
+    margin-top: 1.9rem;
+    font-family: var(--f-mono);
+    font-size: .78rem;
+  }
+  .contact-row .pending { color: var(--ink-faint); border-bottom: 1px dotted var(--ink-faint); }
+  .contact-row .tag {
+    font-size: .62rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-left: .38rem;
+  }
+
+  /* ---------- interest chips ---------- */
+
+  .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+  .chips li {
+    font-family: var(--f-mono);
+    font-size: .70rem;
+    color: var(--accent-ink);
+    background: var(--accent-tint);
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    border-radius: 2px;
+    padding: .26rem .55rem;
+  }
+  .chips.plain li {
+    color: var(--ink-soft);
+    background: var(--surface);
+    border-color: var(--rule);
+  }
+
+  /* ---------- section frame: ledger ---------- */
+
+  section { padding: 2.5rem 0 0; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 2px solid var(--ink);
+    padding-top: .5rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-head .count {
+    font-family: var(--f-mono);
+    font-size: .66rem;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 24;
+    font-weight: 450;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    margin: 0;
+  }
+
+  .sub {
+    font-family: var(--f-mono);
+    font-size: .66rem;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 1.7rem 0 .7rem;
+  }
+  .sub:first-child { margin-top: 0; }
+  .sub-note {
+    font-size: .88rem;
+    color: var(--ink-faint);
+    margin: -.45rem 0 .8rem;
+  }
+
+  /* ---------- ledger rows ---------- */
+
+  .ledger { list-style: none; margin: 0; padding: 0; }
+
+  .row {
+    display: grid;
+    grid-template-columns: var(--gutter) minmax(0, 1fr);
+    gap: 1.75rem;
+    padding: .95rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .row:first-child { border-top: 1px solid var(--rule); }
+
+  .row .gut {
+    font-family: var(--f-mono);
+    font-size: .71rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .04em;
+    color: var(--ink-faint);
+    padding-top: .3rem;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  .row .gut b { display: block; font-weight: 500; color: var(--accent); }
+
+  .row h3 {
+    font-family: var(--f-display);
+    font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 20;
+    font-weight: 500;
+    font-size: 1.03rem;
+    line-height: 1.38;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .row p { margin: .28rem 0 0; color: var(--ink-soft); font-size: .93rem; max-width: 60ch; }
+  .row .note {
+    margin-top: .38rem;
+    font-family: var(--f-mono);
+    font-size: .70rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- pull panel ---------- */
+
+  .panel {
+    background: var(--accent-tint);
+    border-left: 2px solid var(--accent);
+    padding: 1.3rem 1.4rem;
+    max-width: var(--measure);
+  }
+  .panel p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+
+  .body-col { display: flex; flex-direction: column; gap: 1.4rem; }
+  .body-col > p { margin: 0; max-width: var(--measure); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.4rem;
+    margin-top: 3rem;
+    font-family: var(--f-mono);
+    font-size: .70rem;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem 1.5rem;
+  }
+
+  @media (max-width: 720px) {
+    .row { grid-template-columns: 1fr; gap: .3rem; }
+    .row .gut { padding-top: 0; }
+    .row .gut b { display: inline; }
+    .row .gut b::after { content: " \00B7 "; color: var(--ink-faint); font-weight: 400; }
+    .section-head { flex-direction: column; align-items: flex-start; gap: .2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">PhD researcher &middot; Climate finance</p>
+    <h1>Saurav Medhi</h1>
+    <p class="standfirst">What carbon pricing and physical climate risk do to firms in a developing economy.</p>
+    <p class="lede">
+      I am a finance PhD researcher at the Department of Management Studies, IIT Delhi, supervised by
+      Prof. Neeru Chaudhry, with formal training in climate science and climate policy. My work sits between
+      financial market rigour and environment and development policy, and leans on sharp econometric identification.
+    </p>
+    <p class="lede">
+      The current agenda asks how physical and transition climate risk reach the balance sheet: matching
+      district level climate exposure to the places firms actually produce, and using variation in domestic
+      carbon pricing, the social cost of carbon, and firm level emissions to identify the effect.
+    </p>
+    <ul class="chips" aria-label="Research interests">
+      <li>Climate finance</li>
+      <li>Physical and transition climate risk</li>
+      <li>Carbon taxation</li>
+      <li>Social cost of carbon</li>
+      <li>Corporate resilience</li>
+      <li>Applied econometrics</li>
+    </ul>
+    <nav class="contact-row" aria-label="Contact and profiles">
+      <a href="mailto:Saurav.Medhi@dms.iitd.ac.in">Saurav.Medhi@dms.iitd.ac.in</a>
+      <a href="mailto:sauravmedhi262@gmail.com">sauravmedhi262@gmail.com</a>
+      <a href="https://www.linkedin.com/in/saurav-medhi-6a5b62107" target="_blank" rel="noopener">linkedin.com/in/saurav-medhi</a>
+      <a href="https://orcid.org/0009-0002-8535-1813" target="_blank" rel="noopener">orcid.org/0009-0002-8535-1813</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="papers-h">
+    <div class="section-head">
+      <h2 id="papers-h">Working papers</h2>
+      <span class="count">2 papers</span>
+    </div>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>Working paper</b>with Neeru Chaudhry</span>
+        <div>
+          <h3>Decoding Climate Risk: Corporate Resilience under a Triad of Risks in India</h3>
+          <p>
+            Examines how physical and transition climate risk affect corporate resilience among Indian firms.
+            District level climate exposure is matched to firms' production locations, and identification comes
+            from domestic carbon pricing variation, the social cost of carbon, and firm level carbon emissions.
+          </p>
+          <p class="note">Presented at EFMA 2026 and ICFMCF 2026 &middot; accepted at SWFA 2026 and AIMS 2025</p>
+        </div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>In progress</b>with Neeru Chaudhry</span>
+        <div>
+          <h3>Climate Risk and Systemic Vulnerability of Indian Firms</h3>
+          <p>
+            Measures firm level systemic vulnerability to climate shocks using exposure CoVaR and CRISK,
+            then links that vulnerability back to physical and transition climate risk.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="conf-h">
+    <div class="section-head">
+      <h2 id="conf-h">Conferences</h2>
+      <span class="count">4 acceptances</span>
+    </div>
+    <div class="body-col">
+      <p>All four for <em>Decoding Climate Risk: Corporate Resilience under a Triad of Risks in India</em>, with Neeru Chaudhry.</p>
+      <ul class="ledger">
+        <li class="row">
+          <span class="gut"><b>2026</b>Presented</span>
+          <div>
+            <h3>35th Annual Meeting, European Financial Management Association (EFMA)</h3>
+          </div>
+        </li>
+        <li class="row">
+          <span class="gut"><b>2026</b>Presented</span>
+          <div>
+            <h3>8th Pan-IIT International Conference on Financial Markets and Corporate Finance (ICFMCF)</h3>
+          </div>
+        </li>
+        <li class="row">
+          <span class="gut"><b>2026</b>Accepted</span>
+          <div>
+            <h3>65th Annual Meeting, Southwestern Finance Association (SWFA)</h3>
+          </div>
+        </li>
+        <li class="row">
+          <span class="gut"><b>2025</b>Accepted</span>
+          <div>
+            <h3>International Conference on AI and Materials for Sustainability (AIMS)</h3>
+            <p>Organised by IIT Delhi, Abu Dhabi.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="edu-h">
+    <div class="section-head">
+      <h2 id="edu-h">Education</h2>
+      <span class="count">PhD expected 2028</span>
+    </div>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>2028</b>Expected</span>
+        <div>
+          <h3>PhD, Indian Institute of Technology Delhi</h3>
+          <p>Climate finance, climate science modelling, and corporate resilience. Supervised by Prof. Neeru Chaudhry.</p>
+        </div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>2021</b>First, 79.3%</span>
+        <div>
+          <h3>M.Com. in Finance, Banaras Hindu University</h3>
+        </div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>2019</b>First, 79%</span>
+        <div>
+          <h3>B.Com. (Hons.) in Accountancy, Gauhati University</h3>
+        </div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>2016</b>First, 87.6%</span>
+        <div>
+          <h3>Higher Secondary, Commerce, AHSEC</h3>
+        </div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>2014</b>First, 80.33%</span>
+        <div>
+          <h3>Secondary, SEBA</h3>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="awards-h">
+    <div class="section-head">
+      <h2 id="awards-h">Fellowships and awards</h2>
+      <span class="count">UGC</span>
+    </div>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>2025</b></span>
+        <div><h3>Senior Research Fellow, University Grants Commission</h3></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>2021</b></span>
+        <div><h3>Junior Research Fellow, University Grants Commission</h3></div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="certs-h">
+    <div class="section-head">
+      <h2 id="certs-h">Certification</h2>
+      <span class="count">9 programmes</span>
+    </div>
+
+    <p class="sub">Climate risk, policy, and economics</p>
+    <p class="sub-note">United Nations Institute for Training and Research (UNITAR)</p>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>UNITAR</b>2026</span>
+        <div><h3>Carbon Taxation</h3></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>UNITAR</b>2026</span>
+        <div><h3>Integrating Climate Risk Information into National Adaptation Plans</h3></div>
+      </li>
+    </ul>
+
+    <p class="sub">Climate and atmospheric science</p>
+    <p class="sub-note">University Corporation for Atmospheric Research (UCAR)</p>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>UCAR</b>2026</span>
+        <div><h3>Introduction to Tropical Meteorology</h3></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>UCAR</b>2026</span>
+        <div><h3>Climate Change and Extreme Weather</h3></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>UCAR</b>2026</span>
+        <div><h3>Climate Change and Sea Level Rise</h3></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>UCAR</b>2026</span>
+        <div><h3>Climate Variability and Change</h3></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>UCAR</b>2026</span>
+        <div><h3>ENSO and Beyond</h3></div>
+      </li>
+    </ul>
+
+    <p class="sub">Finance and data science</p>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>NSE</b>2026</span>
+        <div><h3>Fundamentals of Electricity Derivatives</h3><p>National Stock Exchange of India.</p></div>
+      </li>
+      <li class="row">
+        <span class="gut"><b>Tokyo</b>2026</span>
+        <div><h3>Global Consumer Intelligence Course on Data Science</h3><p>University of Tokyo.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="skills-h">
+    <div class="section-head">
+      <h2 id="skills-h">Methods and tools</h2>
+      <span class="count">Econometrics</span>
+    </div>
+    <div class="body-col">
+      <div>
+        <p class="sub">Econometric modelling</p>
+        <ul class="chips plain">
+          <li>Quantile regression</li>
+          <li>Difference-in-differences</li>
+          <li>Event study</li>
+          <li>GARCH-DCC</li>
+          <li>Exposure CoVaR</li>
+          <li>CRISK</li>
+        </ul>
+      </div>
+      <div>
+        <p class="sub">Software</p>
+        <ul class="chips plain">
+          <li>Stata</li>
+          <li>R and RStudio</li>
+          <li>Python</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="early-h">
+    <div class="section-head">
+      <h2 id="early-h">Earlier work</h2>
+      <span class="count">Dissertation</span>
+    </div>
+    <ul class="ledger">
+      <li class="row">
+        <span class="gut"><b>B.Com.</b>Dissertation</span>
+        <div>
+          <h3>A Study on the Problems and Prospects of the Bell Metal Industry, Sarthebari, Barpeta District</h3>
+          <p>Fieldwork on a traditional Assamese metal craft cluster, supervised by Mrs. Jonalee Bodoloi, Guwahati Commerce College.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="contact-h">
+    <div class="section-head">
+      <h2 id="contact-h">Contact</h2>
+      <span class="count">IIT Delhi</span>
+    </div>
+    <div class="body-col">
+      <div class="panel">
+        <p>
+          Department of Management Studies, Vishwakarma Bhavan, Indian Institute of Technology Delhi,
+          Hauz Khas, New Delhi 110016, India.
+        </p>
+      </div>
+      <p>
+        Open to collaboration and discussion on climate finance, carbon pricing, and climate risk in
+        emerging markets. Email is the best way to reach me.
+      </p>
+      <nav class="contact-row" aria-label="Contact details">
+        <a href="mailto:Saurav.Medhi@dms.iitd.ac.in">Saurav.Medhi@dms.iitd.ac.in</a>
+        <a href="mailto:sauravmedhi262@gmail.com">sauravmedhi262@gmail.com</a>
+        <a href="https://www.linkedin.com/in/saurav-medhi-6a5b62107" target="_blank" rel="noopener">linkedin.com/in/saurav-medhi</a>
+        <a href="https://orcid.org/0009-0002-8535-1813" target="_blank" rel="noopener">orcid.org/0009-0002-8535-1813</a>
+      </nav>
+    </div>
+  </section>
+
+  <footer>
+    <span>Saurav Medhi &middot; DMS, IIT Delhi</span>
+    <span>Languages: English, Hindi, Assamese</span>
+    <span>Updated August 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
